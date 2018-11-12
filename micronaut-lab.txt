@@ -1,0 +1,54 @@
+
+---[ Devoxx18 - Micronaut lab ]---
+
+
+# commands
+
+	* create a new application
+		mn create-app --build maven hello-galaxy
+		mn create-app --build maven --features hibernate-jpa clubs
+		mn create-app --build maven --features mongo-reactive,discovery-consul fixtures
+
+	* run application
+		mvnw clean compile test exec:exec
+
+	* create a new bean
+		mn create-bean dataLoader
+
+	* create a new client
+		mn create-client clubs
+
+	* run consul
+		docker run -d --name=dev-consul -e CONSUL_BIND_INTERFACE=eth0 -e CONSUL_UI_BETA=true -p 8500:8500 consul
+		open http://localhost:8500
+
+	* run mongo
+		docker run -d --name=dev-mongo -p 27017:27017 mongo
+
+---
+
+# important info
+
+	* made-by
+		OCI, company behind Groovy and Grails
+
+	* advanced dep.inj
+		achieved using annotation processing instead of refelection
+
+	* reactive non-blocking
+		based on Netty technology
+
+---
+
+# links
+
+## officials
+	https://alvarosanchez.github.io/micronaut-workshop-java/
+	https://alvarosanchez.github.io/micronaut-workshop/
+	https://micronaut-projects.github.io/micronaut-test/latest/guide/index.html
+
+## collaterals
+	https://docs.micronaut.io/latest/guide/index.html
+	https://www.infoq.com/news/2018/10/the-road-to-micronaut-1.0
+	https://www.infoq.com/articles/micronaut-tutorial-microservices-jvm
+	https://jonathangiles.net/natively-compiling-micronaut-microservices-using-graalvm-for-insanely-faster-startups/
